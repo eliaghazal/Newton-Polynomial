@@ -1,73 +1,205 @@
-# React + TypeScript + Vite
+# Newton Polynomial Interpolation Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Deploy to GitHub Pages](https://github.com/eliaghazal/Newton-Polynomial/actions/workflows/deploy.yml/badge.svg)](https://github.com/eliaghazal/Newton-Polynomial/actions/workflows/deploy.yml)
 
-Currently, two official plugins are available:
+🎓 **Advanced Interactive Visualization Tool for Numerical Methods**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A stunning, production-ready React application for visualizing Newton Polynomial Interpolation. Built with modern web technologies and designed to wow audiences in mathematical presentations.
 
-## React Compiler
+![Newton Polynomial Visualizer](https://github.com/user-attachments/assets/0518c271-22ff-4d5e-9aed-21c1f7c02e3c)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 🎨 **Modern UI/UX**
+- Glassmorphism design with dark theme
+- Smooth animations powered by Framer Motion
+- Responsive three-column layout
+- Professional gradient styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📊 **Interactive Graph**
+- Click to add interpolation points
+- Real-time polynomial curve updates
+- Plotly.js integration with zoom, pan, and export
+- Smooth animated rendering
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🔢 **Divided Differences Table**
+- Animated triangular table construction
+- Color-coded calculation levels
+- Green-highlighted Newton coefficients
+- Hover tooltips with formulas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 📐 **Mathematical Display**
+- Newton's Forward Difference Formula
+- Expanded polynomial form
+- Individual coefficients display
+- Polynomial degree indicator
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🎬 **Animation Controls**
+- Play/Pause step-by-step visualization
+- Speed control slider (0.5x - 3.0x)
+- Reset functionality
+- Progressive point revelation
+
+### 🔄 **Comparison Mode**
+- Lagrange interpolation overlay
+- Visual proof both methods are equivalent
+- Toggle comparison on/off
+
+### 📚 **Preset Functions**
+9 built-in examples including:
+- Trigonometric (sin, cos)
+- Exponential and logarithmic
+- Polynomials (quadratic, cubic)
+- Runge's Phenomenon
+- Random point generator
+
+### 💾 **Data Management**
+- Export/import points as JSON
+- Clear all points
+- Point count tracking
+
+### 🎓 **Educational Features**
+- Tutorial mode with comprehensive guide
+- Quick reference panel
+- Warning system for numerical issues
+- Hover tooltips explaining calculations
+
+## 🚀 Live Demo
+
+**Visit:** [https://eliaghazal.github.io/Newton-Polynomial/](https://eliaghazal.github.io/Newton-Polynomial/)
+
+## 🛠️ Tech Stack
+
+- **React 19** with TypeScript
+- **Vite 7** - Lightning-fast builds
+- **Tailwind CSS 4** - Modern styling
+- **Framer Motion 12** - Smooth animations
+- **Plotly.js 3** - Interactive graphs
+- **KaTeX 0.16** - Mathematical notation
+- **Lucide React** - Beautiful icons
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/eliaghazal/Newton-Polynomial.git
+cd Newton-Polynomial
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Adding Points
+1. Click anywhere on the graph to add interpolation points
+2. Points automatically sort by x-coordinate
+3. Polynomial updates in real-time
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Exploring Presets
+1. Select from 9 preset functions in the control panel
+2. Try "Runge's Phenomenon" to see interpolation challenges
+3. Use "Random Points" for experimentation
+
+### Animation Mode
+1. Click "Play" to see step-by-step construction
+2. Adjust speed with the slider
+3. Watch the polynomial build term by term
+
+### Comparison Mode
+1. Enable "Show Lagrange Comparison"
+2. See both Newton and Lagrange polynomials overlay
+3. Verify they produce identical results
+
+### Data Export/Import
+1. Export current points as JSON
+2. Import previously saved configurations
+3. Share interesting examples with others
+
+## 📐 Mathematical Implementation
+
+### Newton Polynomial Form
 ```
+P(x) = f[x₀] + f[x₀,x₁](x-x₀) + f[x₀,x₁,x₂](x-x₀)(x-x₁) + ...
+```
+
+### Divided Differences
+```
+f[xᵢ,...,xⱼ] = (f[xᵢ₊₁,...,xⱼ] - f[xᵢ,...,xⱼ₋₁]) / (xⱼ - xᵢ)
+```
+
+### Key Algorithms
+- **Divided Differences**: O(n²) time complexity
+- **Polynomial Evaluation**: Horner's method for efficiency
+- **Lagrange Form**: Basis polynomials for comparison
+- **Numerical Stability**: Checks for ill-conditioned cases
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/
+│   ├── InteractiveGraph.tsx      # Plotly graph component
+│   ├── DividedDifferencesTable.tsx # Animated table
+│   ├── MathDisplay.tsx            # Formula rendering
+│   └── ControlPanel.tsx           # UI controls
+├── utils/
+│   ├── math.ts                    # Interpolation algorithms
+│   └── presets.ts                 # Example functions
+├── types.ts                       # TypeScript interfaces
+├── App.tsx                        # Main application
+└── index.css                      # Tailwind styles
+```
+
+## 🚢 Deployment
+
+The application automatically deploys to GitHub Pages when changes are pushed to the main branch.
+
+### Manual Deployment
+```bash
+npm run build
+# Upload the dist/ folder to your hosting service
+```
+
+### GitHub Pages Configuration
+- Base path: `/Newton-Polynomial/`
+- Build directory: `dist/`
+- GitHub Actions workflow handles automatic deployment
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest new features
+- Submit pull requests
+- Improve documentation
+
+## 📝 License
+
+This project is open source and available under the MIT License.
+
+## 🎓 Educational Use
+
+Perfect for:
+- Numerical Analysis courses
+- Mathematical presentations
+- Teaching interpolation concepts
+- Demonstrating polynomial approximation
+- Interactive learning environments
+
+## 🙏 Acknowledgments
+
+Built with modern web technologies to demonstrate the beauty of numerical methods through interactive visualization.
+
+---
+
+**Made with ❤️ for Mathematics Education**
